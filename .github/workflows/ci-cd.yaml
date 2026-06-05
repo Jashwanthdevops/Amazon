@@ -88,4 +88,4 @@ jobs:
 
     - name: Verify Rollout
       run: |
-        kubectl rollout status deployment/netflix-deployment
+        kubectl rollout status deployment/js-app-deployment
