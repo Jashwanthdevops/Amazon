@@ -81,10 +81,10 @@ jobs:
 
     - name: Deploy to EKS
       run: |
-        ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+       ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 
-        kubectl set image deployment/netflix-deployment \
-        netflix-container=$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+       kubectl set image deployment/js-app-deployment \
+       js-app-container=$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
 
     - name: Verify Rollout
       run: |
